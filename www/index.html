@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html ng-app>
+<head>
+   	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Mobile Dev assignment 2</title>
+	<link rel="stylesheet" href="themes/MobAss.min.css" />
+<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile.structure-1.4.2.min.css" />
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.8/angular.min.js"></script>
+    <script src="toDoController.js"></script>
+
+</head>
+
+<body>
+<div data-role="header">
+    <h1>To Do App</h1>
+					
+</div>
+    
+    <h2> Things to Do</h2>
+ <div ng-controller="TodoCtrl">
+
+    <ul class="unstyled">
+    <li ng-repeat="todo in todos">
+   
+    <span> Task: {{todo.task}}</span>
+    <span> Detail of Task: {{todo.detail}}</span>
+    </li>
+    </ul>
+    
+    
+    <form ng-submit="addNewTask()">
+    <label>Task:</lable>
+    <input type = "text" ng-model="newTask" placeholder="Enter a task..."/>
+   
+    <input class = "btn-primary" type="submit" vaule="add">
+        </form>
+  
+    
+</div>
+		<div data-role="footer" data-position="fixed">
+								<h3>Thing To Do</h3>
+			  				</div>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
