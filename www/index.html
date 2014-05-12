@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html ng-app>
+<head>
+   	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Mobile Dev assignment 2</title>
+	<link rel="stylesheet" type="text/css" href="todoCss/todo.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.8/angular.min.js"></script>
+    <script type="text/javascript" src="todo.js/toDoController.js"></script> 
+
+</head>
+
+<body>
+
+    
+ 
+<div class="container" data-ng-controller="ToDoController">
+
+
+
+<p>Task:    <input type="text"  data-ng-model="newTask.task" /> </p>
+
+<p>Details: <input type="text" data-ng-model="newTask.detail" /> </p>
+
+<button data-ng-click="addNewTask()">Add Item</button>
+<br/>
+
+      
+    <p> <table>
+        <tr>
+            <th>Things to Do</th>
+            <th>Details</th>
+            <th>Done</th>
+            <tr ng-repeat="nextTask in toDoList">
+            <td> {{nextTask.task}}</td>
+            <td>{{nextTask.detail}}</td>
+            <td><button ng-click="delete($index)">Delete task when done</button></td>
+        </tr>
+    </table>
+    </p>
+    
+</div>
+		
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
