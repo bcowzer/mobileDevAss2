@@ -1,4 +1,7 @@
-	function ToDoController($scope) {
+
+    var toDoApp = angular.module('toDoApp', []); // defines angular module
+
+ toDoApp.controller('ToDoController',function($scope) {
 
 		$scope.toDoList=[
             {task:'some task', detail:'some details of task'}, 
@@ -6,7 +9,7 @@
 		];
 
 
-		$scope.addNewTask = function () {
+		$scope.addNewTask = function () {   //adds items to toDoList
 			$scope.toDoList.push(
 
 				{
@@ -19,12 +22,11 @@
 		}
 
 
-$scope.delete = function ( index ) {
+        $scope.delete = function ( index ) {  //deletes items from list
 
-    $scope.toDoList.splice(index, 1);
+            $scope.toDoList.splice(index, 1);
 
-};
+        };
 
-	}
+	});
 
-	console.log('got it...........');
